@@ -1,4 +1,5 @@
 const file = await Deno.readTextFile("input.txt");
+
 const reports = file
   .trim()
   .split("\n")
@@ -6,7 +7,7 @@ const reports = file
     levels
       .trim()
       .split(" ")
-      .map((level) => parseInt(level, 10))
+      .map((level) => parseInt(level, 10)),
   );
 
 const isReportSafe = (levels: number[]) => {
