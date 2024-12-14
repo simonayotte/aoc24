@@ -96,4 +96,30 @@ const part1 = () => {
   console.log("Part 1: ", safetyFactor);
 };
 
+// Assumed the tree is in a state where all robot positions are unique -- This works :)
+const part2 = () => {
+  let robots = input;
+  let numTicks = 1;
+
+  const robotCount = robots.length;
+
+  while (true) {
+    const set = new Set();
+
+    robots = robots.map((robot) => tick(robot));
+
+    robots.forEach((robot) => {
+      set.add(`${robot.p[0]},${robot.p[1]}`);
+    });
+
+    if (set.size === robotCount) {
+      break;
+    }
+    numTicks++;
+  }
+
+  console.log("Part 2: ", numTicks);
+};
+
 part1();
+part2();
