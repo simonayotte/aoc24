@@ -25,7 +25,7 @@ const part1 = () => {
   for (let i = 0; i < input.length; i++) {
     for (let j = 0; j < 2000; j++) {
       const val = res[i];
-      res[i] = getNextSecretNumber(val);
+      res[i] = getNextSecretNumber(val)
     }
   }
 
